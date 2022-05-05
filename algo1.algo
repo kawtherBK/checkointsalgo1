@@ -1,0 +1,49 @@
+ALGORITHM String_treatment
+var
+ sentence:string;
+
+ len:int;
+
+ words:integer;
+
+ wordsArr :ARRAY_OF string[];
+
+ cmpt=0;
+
+BEGIN
+   REPEAT
+       Write('veuilez saisir une phrase qui se termine avec un point:');
+
+       Read (sentence);
+   UNTIL ((sentence.indexOf('.')<>-1)or(sentence!=null)
+   
+   do{
+//replace multiple spaces by a single one
+
+   sentence := sentence.replace(/  +/g, ' ');
+
+   len :=sentence.length;
+
+   Write('the length of the sentence is'+len);
+
+
+//take every words apart 
+
+   words = sentence.split(' ').length
+
+   Write ('the number of words in the sentence is : '+words);
+
+   wordsArr:=sentence.split(' ');
+
+  for var ifrom 0 to i<wordsArr.length  do{
+
+  for var j form 0 to j<wordsArr[i].length  do{
+
+ if (wordsArr[i].charAt(j).match(/[aeiou]/gi)){
+
+   cmpt++;}
+
+ }
+   }
+     Write('the sentence includes'+cmpt+'vowels');
+END
